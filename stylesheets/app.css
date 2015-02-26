@@ -1,0 +1,18 @@
+/* line 1, ../sass/app.scss */
+html {
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 10, ../sass/app.scss */
+p {
+  font-family: 'Arial', san-serif;
+}
+
+/* line 15, ../sass/app.scss */
+h1, h2, h3, h4, h5 {
+  font-family: 'Arial', san-serif;
+}
