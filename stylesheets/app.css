@@ -18,3 +18,14 @@ h1, h2, h3, h4, h5 {
   font-family: 'Arial', san-serif;
   color: #ffffff;
 }
+
+/* line 24, ../sass/app.scss */
+ul li {
+  list-style-type: none;
+}
+
+/* line 28, ../sass/app.scss */
+.super-class {
+  font-weight: bold;
+  color: red;
+}
