@@ -1,4 +1,12 @@
-/* line 1, ../sass/app.scss */
+@font-face {
+  font-family: Engschrift;
+  src: url(fonts/DINEengschriftStd.otf);
+}
+@font-face {
+  font-family: Mittelschrift;
+  src: url(fonts/DINMittelschriftStd.otf);
+}
+/* line 7, ../sass/app.scss */
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -7,25 +15,63 @@ html {
   background-size: cover;
 }
 
-/* line 11, ../sass/app.scss */
+/* line 15, ../sass/app.scss */
 p {
-  font-family: 'Arial', san-serif;
+  font-family: 'Mittelschrift','Arial', san-serif;
   color: #ffffff;
+  line-height: 1.3em;
 }
 
-/* line 18, ../sass/app.scss */
+/* line 22, ../sass/app.scss */
 h1, h2, h3, h4, h5 {
-  font-family: 'Arial', san-serif;
+  font-family: 'Engschrift','Arial', san-serif;
   color: #ffffff;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 29, ../sass/app.scss */
+ul {
+  padding-left: 2%;
+  margin-top: 0px;
+  background: rgba(255, 255, 255, 0.6);
+  line-height: 1.5em;
+  width: 33%;
+  border-radius: 0 0 3px 4px;
+}
+/* line 36, ../sass/app.scss */
 ul li {
+  font-family: 'Engschrift','Arial', san-serif;
   list-style-type: none;
+  cursor: pointer;
+  color: #555;
+}
+/* line 41, ../sass/app.scss */
+ul li::hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 28, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
+input {
+  font-family: 'Engschrift','Arial', san-serif;
+  line-height: 1.5em;
+  lineheight: 1.5em;
+  font-size: 1em;
+}
+
+/* line 59, ../sass/app.scss */
 .super-class {
   font-weight: bold;
   color: red;
+}
+
+/* line 64, ../sass/app.scss */
+.container {
+  width: 100%;
+}
+
+/* line 68, ../sass/app.scss */
+.wrapper {
+  max-width: 600px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 15% 10% 10% 30%;
 }

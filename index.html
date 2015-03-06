@@ -13,18 +13,32 @@
     <script type="text/javascript" src="https://code.angularjs.org/1.0.2/angular-sanitize.min.js"></script>
   </head>
   <body>
-      
+      <div class="container">
+        <div class="wrapper">
     <div ng-app="app">
         <div ng-controller="AirCtrl">
-            <input ng-model="search" placeholder="Airport" />
             
+            <input ng-model="airport1" placeholder="Airport" />
+       <ul>
+          <li ng-repeat="x in airs| filter:airport1| limitTo:3" ng-bind-html="x.Airport_Name  | searchfilter:airport1" ></li>
+      </ul>
+
+            
+            <p>And</p>
+            
+            <input ng-model="airport2" placeholder="Airport" />
+
             
         <ul>
-          <li ng-repeat="x in airs| filter:search | limitTo:10" ng-bind-html="x.Airport_Name  | searchfilter:search" ></li>
+          <li ng-repeat="x in airs| filter:airport2 | limitTo:3" ng-bind-html="x.Airport_Name  | searchfilter:airport2" ></li>
       </ul>
 
       </div>
     
+    </div>
+    
+    <div>
+      
     </div>
     
     
