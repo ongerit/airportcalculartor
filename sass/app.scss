@@ -68,5 +68,11 @@ input{
     max-width: 600px;
     width: 95%;
     margin: 0 auto;
-    padding: 15% 10% 10% 30%;
+    padding: 10% 0 0 0;
 }
+
+      html, body, #map-canvas {
+        margin: 0px;
+        padding: 0px;
+      }
+    
