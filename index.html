@@ -75,26 +75,23 @@ $(document).ready(function(){
       // console.log(myArr);
 
         $("#origin,#end").autocomplete({
-          source: airportName,
+          source: airportName
           
           
-                  focus: function( event, ui ) {
-            $( "#topics" ).val( ui.item.label );
-            return false;
-        },
+        //           focus: function( event, ui ) {
+        //     $( "#topics" ).val( ui.item.label );
+        //     return false;
+        // },
           
-        select: function( event, ui ) {
-            $( "#lat" ).val( ui.item.label );
-            $("#long").val(ui.item.Longitude);
-            $( "#long").text($("#topicID").val());    
-              return false;
-              }
-          
-          
-          
-        });
+        // select: function( event, ui ) {
+        //     $( "#lat" ).val( ui.item.label );
+        //     $("#long").val(ui.item.Longitude);
+        //     $( "#long").text($("#topicID").val());    
+        //       return false;
+        //       }
+        // });
         
-       // });
+        });
     
       
     });
