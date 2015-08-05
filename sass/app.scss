@@ -1,70 +1,64 @@
 @import 'partials/_fonts.scss'; //imports all partials
 //Colors
 $white: #ffffff;
-
-
-
-html { 
-  background: url(../images/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html {
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-p{
-    font-family: 'Mittelschrift','Arial', san-serif;
+p {
+    font-family: 'Mittelschrift', 'Arial', san-serif;
     color: $white;
     line-height: 1.3em;
-
 }
 
-h1,h2,h3,h4,h5{
-    font-family: 'Engschrift','Arial', san-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Engschrift', 'Arial', san-serif;
     color: $white;
-    
-
 }
 
-ul{    
+ul {
     padding-left: 2%;
     margin-top: 0px;
-    background: rgba(255,255,255,.6);
+    background: rgba(255, 255, 255, .6);
     line-height: 1.5em;
     width: 33%;
     border-radius: 0 0 3px 4px;
     li {
-    font-family: 'Engschrift','Arial', san-serif;
-    list-style-type: none;
-    cursor: pointer;
-    color: #555;
-    &::hover{
-     background-color: rgba(255,255,255,.9);
+        font-family: 'Engschrift', 'Arial', san-serif;
+        list-style-type: none;
+        cursor: pointer;
+        color: #555;
+        &::hover {
+            background-color: rgba(255, 255, 255, .9);
+        }
     }
 }
 
-}
-
-input{
-    font-family: 'Engschrift','Arial', san-serif;
+input {
+    font-family: 'Engschrift', 'Arial', san-serif;
     line-height: 1.5em;
     lineheight: 1.5em;
     font-size: 1em;
-
 }
 
-
-
 .super-class {
-   font-weight: bold;
+    font-weight: bold;
     color: red;
 }
 
-.container{
-    width:100%;
+.container {
+    width: 100%;
 }
 
-.wrapper{
+.wrapper {
     max-width: 600px;
     width: 95%;
     margin: 0 auto;
