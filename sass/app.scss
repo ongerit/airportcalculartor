@@ -71,8 +71,12 @@ input{
     padding: 10% 0 0 0;
 }
 
-      html, body, #map-canvas {
-        margin: 0px;
-        padding: 0px;
-      }
-    
+#total{
+    color: $white;
+    font-size: 4em;
+}
+
+div, label{
+    color: $white;
+    font-family: 'Mittelschrift','Arial', san-serif;
+}

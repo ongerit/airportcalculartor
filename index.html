@@ -74,10 +74,46 @@ $(document).ready(function(){
         originLat = airportLat[indexForOrigin];
         destLong = airportLong[indexForDest];
         destLat = airportLat[indexForDest];
+        
+                  
+              // round to the nearest 1/1000
+        function round(x) {
+        	return Math.round( x * 1000) / 1000;
+        }
+          
+    
+        
+        function calculateDist(){
 
-       
-       
+          var R = 3961; //miles
+          var dlon = destLong - originLong;
+          var dlat = destLat- originLat;
+          
+          //var a = Math.pow((Math.sin(dlat/2)),2) + Math.cos(originLat) * Math.cos(destLat) * Math.pow((Math.sin(dlon/2)),2);
+          var a = Math.pow(Math.sin(dlat/2),2) + Math.cos(originLat) * Math.cos(destLat) * Math.pow(Math.sin(dlon/2),2);
+          var c = 2 * Math.atan2(Math.sqrt(a),Math.sqrt(1-a))
+          var d = R * c; //(where R is the radius of the Earth)
+          var dm = round(d) ;
+          
 
+          //console.log(a)
+          //console.log(c)
+          console.log(d)
+          console.log(dm)
+          
+          $('#total').text(dm);
+
+          //console.log(dlon)
+          //console.log(dlat)
+          //console.log(destLat)
+
+        
+        };
+        
+        
+        calculateDist();
+
+  
       
             alert(originLong +" "+ originLat +" "+ destLong +" "+ destLat);
 

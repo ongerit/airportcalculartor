@@ -77,7 +77,13 @@ input {
 }
 
 /* line 74, ../sass/app.scss */
-html, body, #map-canvas {
-  margin: 0px;
-  padding: 0px;
+#total {
+  color: #ffffff;
+  font-size: 4em;
+}
+
+/* line 79, ../sass/app.scss */
+div, label {
+  color: #ffffff;
+  font-family: 'Mittelschrift','Arial', san-serif;
 }
