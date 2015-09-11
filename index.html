@@ -43,68 +43,56 @@ $(document).ready(function(){
       var airportName = [];
       var airportLong = [];
       var airportLat = [];
-
       
-      for( var i in data)
+    
+      for( var i in data) {
       
       airportName.push(data[i].Airport_Name);
       airportLong.push(data[i].Longitude);
       airportLat.push(data[i].Latitute); 
-       
-      //"Latitute":-6.081689,
-      //"Longitude":145.391881
       
-      console.log(airportName);
-      console.log(airportLat);
-      console.log(airportLong);
-      
-      
-     // $.each(data,function(i,Airport_Names){
+        };
         
-       // var sourceData = data[i].Airport_Name;
-        
-        
-       // var myArr = $.parseJSON(sourceData);
-        //var jsonString = JSON.stringify(sourceData);
-        // alert(sourceData);
-        // var arr = $.map(sourceData,function(el)
-        // {return el;})
-        // alert(arr);
-        
-      // console.log(myArr);
-
         $("#origin,#end").autocomplete({
           source: airportName
-          
-          
-        //           focus: function( event, ui ) {
-        //     $( "#topics" ).val( ui.item.label );
-        //     return false;
-        // },
-          
-        // select: function( event, ui ) {
-        //     $( "#lat" ).val( ui.item.label );
-        //     $("#long").val(ui.item.Longitude);
-        //     $( "#long").text($("#topicID").val());    
-        //       return false;
-        //       }
-        // });
         
         });
     
-      
-    });
-  
-  $("#btnSubmit").click(function(){
+    
+      $("#btnSubmit").click(function(){
        
        var valOrigin = $("#origin").val();
        var valEnd = $("#end").val();
-       alert(valOrigin + valEnd );
-  });
-  
-  if ( valOrigin.length < 3 && valEnd.length < 3){
+       //alert(valOrigin + valEnd );
+       
+       var indexForOrigin = airportName.indexOf(valOrigin);
+       var indexForDest = airportName.indexOf(valEnd);
+       
+       var originLong, destLong, originLat, destLat;
+       
+        originLong = airportLong[indexForOrigin];
+        originLat = airportLat[indexForOrigin];
+        destLong = airportLong[indexForDest];
+        destLat = airportLat[indexForDest];
+
+       
+       
+
+      
+            alert(originLong +" "+ originLat +" "+ destLong +" "+ destLat);
+
+      
+        if ( valOrigin.length < 3 && valEnd.length < 3){
     
   }
+
+  });
+      
+    });
+  
+
+  
+
   
   
 });
