@@ -6,7 +6,7 @@
   font-family: Mittelschrift;
   src: url(fonts/DINMittelschriftStd.otf);
 }
-/* line 7, ../sass/app.scss */
+/* line 9, ../sass/app.scss */
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -15,20 +15,21 @@ html {
   background-size: cover;
 }
 
-/* line 15, ../sass/app.scss */
+/* line 17, ../sass/app.scss */
 p {
   font-family: 'Mittelschrift','Arial', san-serif;
   color: #ffffff;
   line-height: 1.3em;
+  text-align: center;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 25, ../sass/app.scss */
 h1, h2, h3, h4, h5 {
   font-family: 'Engschrift','Arial', san-serif;
   color: #ffffff;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 ul {
   padding-left: 2%;
   margin-top: 0px;
@@ -37,53 +38,75 @@ ul {
   width: 33%;
   border-radius: 0 0 3px 4px;
 }
-/* line 36, ../sass/app.scss */
+/* line 37, ../sass/app.scss */
 ul li {
   font-family: 'Engschrift','Arial', san-serif;
   list-style-type: none;
   cursor: pointer;
   color: #555;
 }
-/* line 41, ../sass/app.scss */
+/* line 42, ../sass/app.scss */
 ul li::hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 48, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
 input {
   font-family: 'Engschrift','Arial', san-serif;
   line-height: 1.5em;
-  lineheight: 1.5em;
   font-size: 1em;
+  text-align: center;
 }
 
-/* line 58, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 .super-class {
   font-weight: bold;
   color: red;
 }
 
-/* line 63, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 .container {
   width: 100%;
 }
 
-/* line 67, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 .wrapper {
-  max-width: 600px;
+  max-width: 188px;
   width: 95%;
   margin: 0 auto;
   padding: 10% 0 0 0;
 }
 
-/* line 74, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 #total {
   color: #ffffff;
   font-size: 4em;
 }
 
-/* line 79, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 div, label {
   color: #ffffff;
   font-family: 'Mittelschrift','Arial', san-serif;
+}
+
+/* line 85, ../sass/app.scss */
+#origin, #end {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  margin: 1em auto;
+  display: block;
+}
+
+/* line 100, ../sass/app.scss */
+input:focus {
+  outline: 0;
+}
+
+/* line 105, ../sass/app.scss */
+#btnSubmit {
+  text-align: center;
+  width: 175px;
 }

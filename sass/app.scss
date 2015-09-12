@@ -1,6 +1,8 @@
 @import 'partials/_fonts.scss'; //imports all partials
 //Colors
 $white: #ffffff;
+$blue: blue;
+
 
 
 
@@ -16,14 +18,13 @@ p{
     font-family: 'Mittelschrift','Arial', san-serif;
     color: $white;
     line-height: 1.3em;
+    text-align: center;
 
 }
 
 h1,h2,h3,h4,h5{
     font-family: 'Engschrift','Arial', san-serif;
     color: $white;
-    
-
 }
 
 ul{    
@@ -48,8 +49,8 @@ ul{
 input{
     font-family: 'Engschrift','Arial', san-serif;
     line-height: 1.5em;
-    lineheight: 1.5em;
     font-size: 1em;
+    text-align: center;
 
 }
 
@@ -65,7 +66,7 @@ input{
 }
 
 .wrapper{
-    max-width: 600px;
+    max-width: 188px;
     width: 95%;
     margin: 0 auto;
     padding: 10% 0 0 0;
@@ -79,4 +80,37 @@ input{
 div, label{
     color: $white;
     font-family: 'Mittelschrift','Arial', san-serif;
+}
+
+#origin , #end{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    margin: 1em auto;
+     display: block;
+     
+    
+}
+
+
+input {
+    
+    &:focus{
+        outline: 0;
+    }
+}
+
+#btnSubmit{
+    text-align: center;
+    width: 175px;
+    
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    
 }
