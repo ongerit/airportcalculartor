@@ -45,16 +45,12 @@ $(document).ready(function(){
         	return Math.round( x * 10) / 10;
         }
           
-          
   	      // convert degrees to radians
         	function deg2rad(deg) {
         		rad = deg * Math.PI/180; // radians = degrees * pi/180
         		return rad;
         	}
         	
-        	
-    
-        
         function calculateDist(){
         
           // convert coordinates to radians
