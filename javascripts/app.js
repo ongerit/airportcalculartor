@@ -40,9 +40,9 @@ $(document).ready(function(){
         lat2 = airportLat[indexForDest];
         
                   
-              // round to the nearest 1/1000
+          // round to the nearest 1/1000
         function round(x) {
-        	return Math.round( x * 1000) / 1000;
+        	return Math.round( x * 10) / 10;
         }
           
           
@@ -56,8 +56,7 @@ $(document).ready(function(){
     
         
         function calculateDist(){
-          
-          
+        
           // convert coordinates to radians
         	lat1 = deg2rad(lat1);
         	long1 = deg2rad(long1);
@@ -80,11 +79,6 @@ $(document).ready(function(){
           
           $('#total').text(dm+ " M");
 
-          //console.log(dlon)
-          //console.log(dlat)
-          //console.log(destLat)
-
-        
         };
         
         

@@ -6,26 +6,31 @@
   font-family: Mittelschrift;
   src: url(fonts/DINMittelschriftStd.otf);
 }
-/* line 9, ../sass/app.scss */
-html {
+/* line 5, ../sass/app.scss */
+body {
   background: url(../images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  width: 95%;
 }
 
-/* line 17, ../sass/app.scss */
+/* line 14, ../sass/app.scss */
 p {
-  font-family: 'Mittelschrift','Arial', san-serif;
+  font-family: 'Mittelschrift', 'Arial', san-serif;
   color: #ffffff;
   line-height: 1.3em;
   text-align: center;
 }
 
-/* line 25, ../sass/app.scss */
-h1, h2, h3, h4, h5 {
-  font-family: 'Engschrift','Arial', san-serif;
+/* line 21, ../sass/app.scss */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Engschrift', 'Arial', san-serif;
   color: #ffffff;
 }
 
@@ -40,7 +45,7 @@ ul {
 }
 /* line 37, ../sass/app.scss */
 ul li {
-  font-family: 'Engschrift','Arial', san-serif;
+  font-family: 'Engschrift', 'Arial', san-serif;
   list-style-type: none;
   cursor: pointer;
   color: #555;
@@ -50,26 +55,26 @@ ul li::hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 49, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 input {
-  font-family: 'Engschrift','Arial', san-serif;
+  font-family: 'Engschrift', 'Arial', san-serif;
   line-height: 1.5em;
   font-size: 1em;
   text-align: center;
 }
 
-/* line 59, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 .super-class {
   font-weight: bold;
   color: red;
 }
 
-/* line 64, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 .container {
   width: 100%;
 }
 
-/* line 68, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 .wrapper {
   max-width: 188px;
   width: 95%;
@@ -77,20 +82,22 @@ input {
   padding: 10% 0 0 0;
 }
 
-/* line 75, ../sass/app.scss */
+/* line 71, ../sass/app.scss */
 #total {
   color: #ffffff;
   font-size: 4em;
 }
 
-/* line 80, ../sass/app.scss */
-div, label {
+/* line 76, ../sass/app.scss */
+div,
+label {
   color: #ffffff;
-  font-family: 'Mittelschrift','Arial', san-serif;
+  font-family: 'Mittelschrift', 'Arial', san-serif;
 }
 
-/* line 85, ../sass/app.scss */
-#origin, #end {
+/* line 82, ../sass/app.scss */
+#origin,
+#end {
   background-color: transparent;
   border: 2px solid white;
   border-radius: 6px;
@@ -98,15 +105,40 @@ div, label {
   text-align: center;
   margin: 1em auto;
   display: block;
+  width: 95%;
 }
 
-/* line 100, ../sass/app.scss */
+/* line 94, ../sass/app.scss */
+input {
+  font-family: 'Engschrift', 'Arial', san-serif;
+}
+/* line 97, ../sass/app.scss */
 input:focus {
   outline: 0;
 }
 
-/* line 105, ../sass/app.scss */
+/* line 102, ../sass/app.scss */
 #btnSubmit {
   text-align: center;
-  width: 175px;
+  width: 95%;
+}
+
+@media (max-width: 800px) {
+  /* line 109, ../sass/app.scss */
+  .wrapper {
+    max-width: 100%;
+    width: 95%;
+  }
+
+  /* line 113, ../sass/app.scss */
+  #btnSubmit {
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* line 118, ../sass/app.scss */
+  body {
+    font-size: 2em;
+  }
 }
