@@ -16,6 +16,8 @@ p {
     color: $white;
     line-height: 1.3em;
     text-align: center;
+    font-size: 1.5em;
+    
 }
 
 h1,
@@ -61,11 +63,26 @@ input {
     width: 100%;
 }
 
+.logo{
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+}
+
+.logo-animate{
+    margin: 0;
+    display: block;
+}
+
+.status{
+    visibility: hidden;
+    display: none;
+}
 .wrapper {
-    max-width: 188px;
+    max-width: 400px;
     width: 95%;
     margin: 0 auto;
-    padding: 10% 0 0 0;
+    display: none;
 }
 
 #total {
@@ -102,6 +119,13 @@ input {
 #btnSubmit {
     text-align: center;
     width: 95%;
+    margin: 0 auto;
+    background-color: $white;
+    color: #ccc;
+    border-radius: 6px;
+    font-family: 'Helvetica light','Arial' ;
+    line-height: 1.5em;
+    font-size: 1.5em;
 
 }
 
@@ -110,13 +134,15 @@ input {
         max-width: 100%;
         width: 95%;
     }
-    #btnSubmit {
-        text-align: center;
-        width: 95%;
-        margin: 0 auto;
-    }
+
     body{
         font-size: 2em;
+    }
+    
+    #logo{
+        width: 35% !important;
+        margin: 0 auto;
+        
     }
     
 }
