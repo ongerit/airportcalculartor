@@ -20,7 +20,7 @@ body {
 p {
   font-family: 'Mittelschrift', 'Arial', san-serif;
   color: #ffffff;
-  line-height: 1.3em;
+  line-height: 1em;
   text-align: center;
   font-size: 1.5em;
 }
@@ -148,23 +148,29 @@ input:focus {
   font-family: "Helvetica light", "Arial";
   line-height: 1.5em;
   font-size: 1.5em;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
-  /* line 133, ../sass/app.scss */
+  /* line 134, ../sass/app.scss */
   .wrapper {
     max-width: 100%;
     width: 95%;
   }
 
-  /* line 138, ../sass/app.scss */
+  /* line 139, ../sass/app.scss */
   body {
     font-size: 2em;
   }
 
-  /* line 142, ../sass/app.scss */
+  /* line 143, ../sass/app.scss */
   #logo {
     width: 35% !important;
     margin: 0 auto;
+  }
+
+  /* line 148, ../sass/app.scss */
+  p, div, #btnSubmit {
+    font-size: 1em;
   }
 }

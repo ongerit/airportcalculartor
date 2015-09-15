@@ -14,7 +14,7 @@ body {
 p {
     font-family: 'Mittelschrift', 'Arial', san-serif;
     color: $white;
-    line-height: 1.3em;
+    line-height: 1em;
     text-align: center;
     font-size: 1.5em;
     
@@ -126,6 +126,7 @@ input {
     font-family: 'Helvetica light','Arial' ;
     line-height: 1.5em;
     font-size: 1.5em;
+    cursor: pointer;
 
 }
 
@@ -144,5 +145,8 @@ input {
         margin: 0 auto;
         
     }
-    
+    p, div, #btnSubmit{
+        font-size: 1em;
+    }
+
 }
