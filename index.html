@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Airport Calculator</title>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/app.css" type="text/css" />
-
-    <script src="https://code.angularjs.org/1.0.2/angular.min.js"></script>
-    <script type="text/javascript" src="https://code.angularjs.org/1.0.2/angular-sanitize.min.js"></script>
+    
 </head>
 
 <body>
     <div class="container">
+        <img class="logo" id="logo" src="images/logo.png" /> 
         <div class="wrapper">
-            <div ng-app="app">
-                <div ng-controller="AirCtrl">
-                    <input id="airport1" ng-model="airport1" placeholder="Airport" />
-                    <ul class="list">
-                        <li class="airClassOne" ng-repeat="x in airs| filter:airport1| limitTo:3" ng-bind-html="x.Airport_Name  | searchfilter:airport1"></li>
-                    </ul>
-                    <p>And</p>
-                    <input id="airport2" ng-model="airport2" placeholder="Airport" />
-                    <ul class="list">
-                        <li ng-repeat="x in airs| filter:airport2 | limitTo:3" ng-bind-html="x.Airport_Name  | searchfilter:airport2"></li>
-                    </ul>
-                    <button id="checkReset">Reset</button>
-                    <button id="checkSubmit">Submit</button>
-                    <p><span id="longOne"></span></p>
-                    <p><span id="longTwo"></span></p>
-                </div>
+            <div class="ui-widget">
+                <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
+                <input id="origin" />
+                <p> And </p>
+                <input id="end" />
+                <div id="btnSubmit" type="submit" name="CALCULATE"> CALCULATE</div>
             </div>
-            <div>
-            </div>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script type="text/javascript" src="javascripts/app.js"></script>
-            <!--<script type="text/javascript" src="/js/data1.json"></script>-->
+            <p id="total"></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
-
 </html>

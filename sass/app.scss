@@ -1,18 +1,23 @@
-//@import 'partials/_fonts.scss'; //imports all partials
+@import 'partials/_fonts.scss'; //imports all partials
 //Colors
 $white: #ffffff;
-html {
+$blue: blue;
+body {
     background: url(../images/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    width: 95%;
 }
 
 p {
     font-family: 'Mittelschrift', 'Arial', san-serif;
     color: $white;
-    line-height: 1.3em;
+    line-height: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    
 }
 
 h1,
@@ -45,8 +50,8 @@ ul {
 input {
     font-family: 'Engschrift', 'Arial', san-serif;
     line-height: 1.5em;
-    lineheight: 1.5em;
     font-size: 1em;
+    text-align: center;
 }
 
 .super-class {
@@ -58,9 +63,90 @@ input {
     width: 100%;
 }
 
+.logo{
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+}
+
+.logo-animate{
+    margin: 0;
+    display: block;
+}
+
+.status{
+    visibility: hidden;
+    display: none;
+}
 .wrapper {
-    max-width: 600px;
+    max-width: 400px;
     width: 95%;
     margin: 0 auto;
-    padding: 15% 10% 10% 30%;
+    display: none;
+}
+
+#total {
+    color: $white;
+    font-size: 4em;
+}
+
+div,
+label {
+    color: $white;
+    font-family: 'Mittelschrift', 'Arial', san-serif;
+}
+
+#origin,
+#end {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    width: 95%;
+}
+
+input {
+    font-family: 'Engschrift', 'Arial', san-serif;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+#btnSubmit {
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    background-color: $white;
+    color: #ccc;
+    border-radius: 6px;
+    font-family: 'Helvetica light','Arial' ;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+
+}
+
+@media (max-width: 800px) {
+    .wrapper {
+        max-width: 100%;
+        width: 95%;
+    }
+
+    body{
+        font-size: 2em;
+    }
+    
+    #logo{
+        width: 35% !important;
+        margin: 0 auto;
+        
+    }
+    p, div, #btnSubmit{
+        font-size: 1em;
+    }
+
 }

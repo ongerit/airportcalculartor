@@ -1,21 +1,44 @@
 <<<<<<< HEAD
 /* line 4, ../sass/app.scss */
 html {
+=======
+@font-face {
+  font-family: Engschrift;
+  src: url(fonts/dinengschriftstd-webfont.eot);
+}
+@font-face {
+  font-family: Mittelschrift;
+  src: url(fonts/DINMittelschriftStd.otf);
+}
+/* line 5, ../sass/app.scss */
+body {
+>>>>>>> jquery
   background: url(../images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  width: 95%;
 }
 
+<<<<<<< HEAD
 /* line 12, ../sass/app.scss */
+=======
+/* line 14, ../sass/app.scss */
+>>>>>>> jquery
 p {
   font-family: 'Mittelschrift', 'Arial', san-serif;
   color: #ffffff;
-  line-height: 1.3em;
+  line-height: 1em;
+  text-align: center;
+  font-size: 1.5em;
 }
 
+<<<<<<< HEAD
 /* line 18, ../sass/app.scss */
+=======
+/* line 23, ../sass/app.scss */
+>>>>>>> jquery
 h1,
 h2,
 h3,
@@ -25,7 +48,11 @@ h5 {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 /* line 27, ../sass/app.scss */
+=======
+/* line 32, ../sass/app.scss */
+>>>>>>> jquery
 ul {
   padding-left: 2%;
   margin-top: 0px;
@@ -34,43 +61,159 @@ ul {
   width: 33%;
   border-radius: 0 0 3px 4px;
 }
+<<<<<<< HEAD
 /* line 34, ../sass/app.scss */
+=======
+/* line 39, ../sass/app.scss */
+>>>>>>> jquery
 ul li {
   font-family: 'Engschrift', 'Arial', san-serif;
   list-style-type: none;
   cursor: pointer;
   color: #555;
 }
+<<<<<<< HEAD
 /* line 39, ../sass/app.scss */
+=======
+/* line 44, ../sass/app.scss */
+>>>>>>> jquery
 ul li::hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+<<<<<<< HEAD
 /* line 45, ../sass/app.scss */
+=======
+/* line 50, ../sass/app.scss */
+>>>>>>> jquery
 input {
   font-family: 'Engschrift', 'Arial', san-serif;
   line-height: 1.5em;
-  lineheight: 1.5em;
   font-size: 1em;
+  text-align: center;
 }
 
+<<<<<<< HEAD
 /* line 52, ../sass/app.scss */
+=======
+/* line 57, ../sass/app.scss */
+>>>>>>> jquery
 .super-class {
   font-weight: bold;
   color: red;
 }
 
+<<<<<<< HEAD
 /* line 57, ../sass/app.scss */
+=======
+/* line 62, ../sass/app.scss */
+>>>>>>> jquery
 .container {
   width: 100%;
 }
 
+<<<<<<< HEAD
 /* line 61, ../sass/app.scss */
+=======
+/* line 66, ../sass/app.scss */
+.logo {
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+}
+
+/* line 72, ../sass/app.scss */
+.logo-animate {
+  margin: 0;
+  display: block;
+}
+
+/* line 77, ../sass/app.scss */
+.status {
+  visibility: hidden;
+  display: none;
+}
+
+/* line 81, ../sass/app.scss */
+>>>>>>> jquery
 .wrapper {
-  max-width: 600px;
+  max-width: 400px;
   width: 95%;
   margin: 0 auto;
-  padding: 15% 10% 10% 30%;
+  display: none;
+}
+
+/* line 88, ../sass/app.scss */
+#total {
+  color: #ffffff;
+  font-size: 4em;
+}
+
+/* line 93, ../sass/app.scss */
+div,
+label {
+  color: #ffffff;
+  font-family: 'Mittelschrift', 'Arial', san-serif;
+}
+
+/* line 99, ../sass/app.scss */
+#origin,
+#end {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  margin: 1em auto;
+  display: block;
+  width: 95%;
+}
+
+/* line 111, ../sass/app.scss */
+input {
+  font-family: 'Engschrift', 'Arial', san-serif;
+}
+/* line 114, ../sass/app.scss */
+input:focus {
+  outline: 0;
+}
+
+/* line 119, ../sass/app.scss */
+#btnSubmit {
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #ccc;
+  border-radius: 6px;
+  font-family: "Helvetica light", "Arial";
+  line-height: 1.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  /* line 134, ../sass/app.scss */
+  .wrapper {
+    max-width: 100%;
+    width: 95%;
+  }
+
+  /* line 139, ../sass/app.scss */
+  body {
+    font-size: 2em;
+  }
+
+  /* line 143, ../sass/app.scss */
+  #logo {
+    width: 35% !important;
+    margin: 0 auto;
+  }
+
+  /* line 148, ../sass/app.scss */
+  p, div, #btnSubmit {
+    font-size: 1em;
+  }
 }
 =======
 /*
