@@ -1,63 +1,69 @@
-/*
-Error: File to import not found or unreadable: partials/_fonts.scss.
-       Load paths:
-         Compass::SpriteImporter
-         /home/ubuntu/workspace/sass
-         /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets
-        on line 1 of /home/ubuntu/workspace/sass/app.scss
+/* line 6, ../sass/app.scss */
+html {
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-1: @import 'partials/_fonts.scss'; //imports all partials
-2: //Colors
-3: $white: #ffffff;
-4: 
-5: 
-6: 
+/* line 14, ../sass/app.scss */
+p {
+  font-family: 'Mittelschrift','Arial', san-serif;
+  color: #ffffff;
+  line-height: 1.3em;
+}
 
-Backtrace:
-/home/ubuntu/workspace/sass/app.scss:1
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/import_node.rb:45:in `import'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/stack.rb:79:in `with_base'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/tree/root_node.rb:20:in `render'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/engine.rb:268:in `render'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:252:in `call'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/usr/local/rvm/gems/ruby-2.1.5@rails4/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: partials/_fonts.scss.\A        Load paths:\A          Compass::SpriteImporter\A          /home/ubuntu/workspace/sass\A          /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets\A         on line 1 of /home/ubuntu/workspace/sass/app.scss\A \A 1: @import 'partials/_fonts.scss'; //imports all partials\A 2: //Colors\A 3: $white: #ffffff;\A 4: \A 5: \A 6: "; }
+/* line 21, ../sass/app.scss */
+h1, h2, h3, h4, h5 {
+  font-family: 'Engschrift','Arial', san-serif;
+  color: #ffffff;
+}
+
+/* line 28, ../sass/app.scss */
+ul {
+  padding-left: 2%;
+  margin-top: 0px;
+  background: rgba(255, 255, 255, 0.6);
+  line-height: 1.5em;
+  width: 33%;
+  border-radius: 0 0 3px 4px;
+}
+/* line 35, ../sass/app.scss */
+ul li {
+  font-family: 'Engschrift','Arial', san-serif;
+  list-style-type: none;
+  cursor: pointer;
+  color: #555;
+}
+/* line 40, ../sass/app.scss */
+ul li::hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* line 47, ../sass/app.scss */
+input {
+  font-family: 'Engschrift','Arial', san-serif;
+  line-height: 1.5em;
+  lineheight: 1.5em;
+  font-size: 1em;
+}
+
+/* line 57, ../sass/app.scss */
+.super-class {
+  font-weight: bold;
+  color: red;
+}
+
+/* line 62, ../sass/app.scss */
+.container {
+  width: 100%;
+}
+
+/* line 66, ../sass/app.scss */
+.wrapper {
+  max-width: 600px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 15% 10% 10% 30%;
+}
