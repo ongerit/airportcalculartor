@@ -6,3 +6,4 @@
 bower_components/
 node_modules/
 test/
+node_modules

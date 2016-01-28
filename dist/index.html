@@ -4,7 +4,7 @@
 <head>
     <title>Airport Calculator</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/app.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/app.css" type="text/css">
 </head>
 
 <body id="app">
@@ -15,12 +15,12 @@
             </div>
             <div class="ui-widget">
                 <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
-                <select  ist="cards-list" name="card-type">
-                    <option  v-for="item in feed" value="{{origin}}">{{item.Airport_Name}}</option>
+                <select ist="cards-list" name="card-type">
+                    <option v-for="item in feed" value="{{origin}}">{{item.Airport_Name}}</option>
                 </select>
                 <p> And </p>
                 <select list="cards-list" name="card-type">
-                    <option  v-for="item in feed" value="{{destination}}">{{item.Airport_Name}}</option>
+                    <option v-for="item in feed" value="{{destination}}">{{item.Airport_Name}}</option>
                 </select>
                 <div id="btnSubmit" type="submit" name="CALCULATE" v-onclick="calculate"> CALCULATE</div>
             </div>
