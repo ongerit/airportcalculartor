@@ -1,6 +1,34 @@
-##Airport Calculator
-This website calculates the distance from one airport to another.
+# amex-cc-comparision-prototype
+Prototype for AMEX credit card comparision tool
 
-Please view page here:
-[Link](https://preview.c9.io/ongerit/airportcalculartor/index.html?_c9_id=livepreview0&_c9_host=https://ide.c9.io)
- 
+## Requirements:
+
+node >= 4.0.0
+gulp >= 3.9.0 w/ external module babel-core/register
+
+
+
+## Installation
+
+```bash
+$ cd amex-cc-comparision-prototype
+$ npm install
+$ bower install
+```
+
+## Configuration
+
+All build config is stored in gulpfile.babel.js
+
+
+## Develop
+```bash
+
+$ gulp serve
+```
+
+## Build
+```bash
+
+$ gulp build
+```
