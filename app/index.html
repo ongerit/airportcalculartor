@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="stylesheets/app.css" type="text/css" />
 </head>
 
-<body id="app">
-    <div class="container">
+<body>
+    <div class="container"  id="app">
         <!-- <img class="logo" id="logo" src="images/logo.png" />  -->
         <div class="wrapper">
             <div>
@@ -22,11 +22,10 @@
                 <select list="cards-list" name="card-type">
                     <option  v-for="item in feed" value="{{destination}}">{{item.Airport_Name}}</option>
                 </select>
-                <div id="btnSubmit" type="submit" name="CALCULATE" v-onclick="calculate"> CALCULATE</div>
+                <div id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
             </div>
             <p id="total"></p>
-            
-            
+          
             
             <div id="the-basics">
               <input class="typeahead" type="text" placeholder="States of USA">
