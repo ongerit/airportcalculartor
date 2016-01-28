@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Airport Calculator</title>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/app.css" type="text/css" />
+</head>
+
+<body id="app">
+    <div class="container">
+        <!-- <img class="logo" id="logo" src="images/logo.png" />  -->
+        <div class="wrapper">
+            <div>
+            </div>
+            <div class="ui-widget">
+                <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
+                <select  ist="cards-list" name="card-type">
+                    <option  v-for="item in feed" value="{{origin}}">{{item.Airport_Name}}</option>
+                </select>
+                <p> And </p>
+                <select list="cards-list" name="card-type">
+                    <option  v-for="item in feed" value="{{destination}}">{{item.Airport_Name}}</option>
+                </select>
+                <div id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
+            </div>
+            <p id="total"></p>
+            
+            
+            
+            <div id="the-basics">
+              <input class="typeahead" type="text" placeholder="States of USA">
+            </div>
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script src="js/typehead.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+    <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+</body>
+
+</html>
