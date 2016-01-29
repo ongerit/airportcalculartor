@@ -81,6 +81,17 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });
 
+$('#data .typeahead').typeahead({
+  hint: false,
+  highlight: false,
+	minLength: 1
+},
+{
+  name: 'url',
+  source: substringMatcher(url.airportname)
+});
+
+
 
 
 

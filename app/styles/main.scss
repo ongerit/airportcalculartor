@@ -1,8 +1,32 @@
 @import 'partials/_fonts.scss'; //imports all partials
 @import 'partials/_typehead.scss'; 
 //Colors
-$white: #ccc;
+$white: #fff;
 $blue: blue;
+
+@font-face {
+    font-family: Engschrift;
+    src: url(fonts/dinengschriftstd-webfont.eot);
+}
+
+@font-face {
+    font-family: Mittelschrift ;
+    src: url(fonts/DINMittelschriftStd.otf);
+}
+
+@font-face {
+    font-family: DIN ;
+    src: url(fonts/dinengschriftstd-webfont.otf);
+    
+}
+
+
+@mixin font($font){
+   font-family: $font, 'Arial', san-serif;
+}
+
+
+
 body {
     background: url(../images/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -15,11 +39,11 @@ body {
 }
 
 p {
-    font-family: 'Mittelschrift', 'Arial', san-serif;
+    @include font('DIN');
     color: $white;
     line-height: 1em;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 22px;
     
 }
 h1,
@@ -63,7 +87,7 @@ input {
 
 .container {
     width: 100%;
-    margin-top: 11em;
+
 }
 
 .logo{
@@ -85,7 +109,7 @@ input {
     max-width: 400px;
     width: 95%;
     margin: 0 auto;
-//    display: none;
+    margin-top: 10em;
 }
 
 #total {
@@ -120,35 +144,47 @@ input {
 
 #btnSubmit {
     text-align: center;
-    width: 95%;
+    height: 50px;
     margin: 0 auto;
-    background-color: $white;
-    color: #333;
+    background-color: #fff;
+    color: white;
     border-radius: 6px;
     font-family: 'Helvetica light','Arial' ;
     line-height: 1.5em;
-    font-size: 1.5em;
+    font-size: 16px;
     cursor: pointer;
+    margin-top: 2em;
+    color: #1c72b0;
+    line-height: 3em;
+    width: 300px;
 
 }
 
-@media (max-width: 800px) {
-    .wrapper {
-        max-width: 100%;
-        width: 95%;
-    }
-
-    body{
-        font-size: 2em;
-    }
+.airplanes{
+    position: absolute;
+        left: 500px;
     
-    #logo{
-        width: 35% !important;
-        margin: 0 auto;
-        
-    }
-    p, div, #btnSubmit{
-        font-size: 1em;
-    }
+}
 
+.ui-widget{
+
+    width: 380px;
+    padding: 15%;
+    background: url('../images/airplanes.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 387px;
+
+}
+
+.typeahead{
+    background: transparent;
+    border: 2.5px solid #fff;
+    color: white;
+    font-size: 24px;
+    width: 311px;
+
+    
+    
+    
 }
