@@ -1,6 +1,5 @@
-# amex-cc-comparision-prototype
-Prototype for AMEX credit card comparision tool
-
+# airport calculator
+Prototype for Calculating distance between airports
 ## Requirements:
 
 node >= 4.0.0
@@ -11,7 +10,7 @@ gulp >= 3.9.0 w/ external module babel-core/register
 ## Installation
 
 ```bash
-$ cd amex-cc-comparision-prototype
+$ cd airportcalculator
 $ npm install
 $ bower install
 ```
