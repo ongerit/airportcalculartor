@@ -6,32 +6,80 @@ var url = [{"ID":1,"Airport_Name":"Goroka","Location":"Goroka","Country":"Papua 
 {"ID":6,"Airport_Name":"Wewak Intl","Location":"Wewak","Country":"Papua New Guinea","Airport_Code":"WWK","Airport_Code2":"AYWK","Latitute":-3.583828,"Longitude":143.669186,"Elevation":19,"Variation":10,"D":"U","Time_Zone":"Pacific/Port_Moresby"},
 {"ID":7,"Airport_Name":"Narsarsuaq","Location":"Narssarssuaq","Country":"Greenland","Airport_Code":"UAK","Airport_Code2":"BGBW","Latitute":61.160517,"Longitude":-45.425978,"Elevation":112,"Variation":-3,"D":"E","Time_Zone":"America/Godthab"}]
 
+
+
+var airData = "../javascripts/data.json";
+
 var vm = new Vue({
 	
 	el : "#app",
 	
 	data: {
-		
-		feed: url,
 		origin: '',
-		destination: ''
+		destination: '',
+        airports: '',
+        airportName: [],
 	},
 	
 	ready: function(){
-					
+        this.getData();
+        this.calculate();
+
 	},
-	
-	
 	methods:{
 		
-		calculate: function(){
+		calculate: function(origin,destination){
 			this.$set('origin',origin);
 			this.$set('destination',destination);
-			
-			console.log(this);
-			
-			
-		}
+		},
+        
+        getData: function() {
+            this.$http.get(airData, function(data) {
+                this.$set('airports', data);
+                this.getAirports();
+                this.typeData();
+            });
+        },
+        getAirports: function(){
+             var airportData = this.airports;
+            console.log(airportData.length);
+            
+            for(var i = 0; i < airportData.length; i++ ){
+                
+                this.airportName.push(airportData[i].an + ' ( '+airportData[i].ac +' ) ');
+//                this.$set('airportName', airportData.a[i]);
+
+            }
+        },
+                
+            typeData: function(){
+
+                var a = vm._data.airportName;
+                
+                console.log(a);
+
+                $('#the-basics .typeahead').typeahead({
+                hint: false,
+                highlight: false,
+                minLength: 1
+                },
+                {
+                name: 'a',
+                source: substringMatcher(a)
+                });
+
+                $('#origin .typeahead').typeahead({
+                hint: false,
+                highlight: false,
+                minLength: 1
+                },
+                {
+                name: 'a',
+                source: substringMatcher(a)
+                });
+
+              
+        }
 		
 	}
 	
@@ -71,26 +119,44 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 ];
 
-$('#the-basics .typeahead').typeahead({
-  hint: false,
-  highlight: false,
-	minLength: 1
-},
-{
-  name: 'states',
-  source: substringMatcher(states)
-});
 
-$('#data .typeahead').typeahead({
-  hint: false,
-  highlight: false,
-	minLength: 1
-},
-{
-  name: 'url',
-  source: substringMatcher(url.airportname)
-});
-
+//  $(window).bind("load", function() {
+//        var a = [];
+//        var airportData = vm._data.airports;
+//
+//
+//        console.log(vm._data.airports);
+//
+//        for(var i = 0; i < airportData.length; i++ ){
+//
+//            a.push(airportData[i].a) ;
+//
+//        }
+//
+//        console.log(airportData);
+//
+//
+//        $('#the-basics .typeahead').typeahead({
+//          hint: false,
+//          highlight: false,
+//            minLength: 1
+//        },
+//        {
+//          name: 'a',
+//          source: substringMatcher(a)
+//        });
+//
+//        $('#origin .typeahead').typeahead({
+//          hint: false,
+//          highlight: false,
+//            minLength: 1
+//        },
+//        {
+//          name: 'a',
+//          source: substringMatcher(a)
+//        });
+//
+//  });
 
 
 

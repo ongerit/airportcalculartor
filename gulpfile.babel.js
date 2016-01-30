@@ -71,6 +71,8 @@ gulp.task('scripts',function(){
   return gulp.src('app/scripts/*.js')
       .pipe($.uglify())
       .pipe(gulp.dest('dist/scripts'));
+  return gulp.src('app/javascripts/*.js')
+      .pipe(gulp.dest('dist/javascripts'));
 });
 
 gulp.task('compass', function() {
@@ -108,6 +110,26 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+//
+//gulp.task('js', () => {
+//  return gulp.src('app/javascripts/**/*')
+////    .concat('app/javascripts/**/*'))
+//    .pipe(gulp.dest('.tmp/javascripts'))
+//    .pipe(gulp.dest('dist/javascripts'));
+//});
+
+
+gulp.task('json',function(){
+  return gulp.src('app/javascripts/*.json')
+      .pipe(gulp.dest('dist/json'));
+//  return gulp.src('app/javascripts/*.json')
+//      .pipe(gulp.dest('dist/json'))
+//      .pipe(gulp.dest('.tmp/json'));
+
+});
+
+
+
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
@@ -119,7 +141,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'fonts'], () => {
+gulp.task('serve', ['styles', 'fonts','json'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -134,6 +156,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
   gulp.watch([
     'app/*.html',
     'app/scripts/**/*.js',
+    'app/javascripts/**/*.json',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);

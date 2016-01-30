@@ -6,17 +6,17 @@ $blue: blue;
 
 @font-face {
     font-family: Engschrift;
-    src: url(fonts/dinengschriftstd-webfont.eot);
+    src: url(../../fonts/dinengschriftstd-webfont.eot);
 }
 
 @font-face {
     font-family: Mittelschrift ;
-    src: url(fonts/DINMittelschriftStd.otf);
+    src: url(../../fonts/DINMittelschriftStd.otf);
 }
 
 @font-face {
     font-family: DIN ;
-    src: url(fonts/dinengschriftstd-webfont.otf);
+    src: url(../../fonts/dinengschriftstd-webfont.ttf);
     
 }
 
@@ -122,18 +122,6 @@ label {
     font-family: 'Mittelschrift', 'Arial', san-serif;
 }
 
-#origin,
-#end {
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 6px;
-    color: white;
-    text-aligsn: center;
-    margin: 1em auto;
-    display: block;
-    width: 45%;
-}
-
 input {
     font-family: 'Engschrift', 'Arial', san-serif;
 
@@ -174,6 +162,7 @@ input {
     background-position: 50%;
     background-repeat: no-repeat;
     height: 387px;
+    padding-top: 7em;      
 
 }
 
