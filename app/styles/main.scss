@@ -141,7 +141,6 @@ input {
     text-align: center;
     height: 50px;
     margin: 0 auto;
-    background-color: #fff;
     color: white;
     border-radius: 6px;
     font-family: 'Helvetica light','Arial' ;
@@ -152,18 +151,36 @@ input {
     color: $blue;
     line-height: 3em;
     width: 300px;
+    
+    &:hover{
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid white;
+
+    }
+
 }
 
 #btnReset,#btnMap{
-    width: 47%;
+    width: 46%;
     float: left;
     text-align: center;
     text-transform: uppercase;
 }
 #btnReset{
-    margin-right: 1em;
-
+    margin-right: .8em;
+    border: 1px solid white;
+    color: white;
     
+    &:hover{
+        background: #ffffff;
+        color: $blue;
+    }
+}
+
+#btnMap, #btnSubmit{
+    background-color: #fff;
+
 }
 
 .btnContainer{
@@ -204,7 +221,7 @@ input {
     background-repeat: no-repeat;
     height: 536px;    
     .details{
-    width: 54%;
+   width: 48%;
 margin: 0  auto;
                 padding-top: 2.1em;
         

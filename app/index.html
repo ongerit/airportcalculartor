@@ -14,37 +14,37 @@
         <div class="wrapper">
             <div>
             </div>
-            <div v-if="show" class="ui-widget">
-                <div class="details">
+            <div id="hide" v-if="show" class="ui-widget animated" transition="fade">
+                <div class="details" >
                 <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
                     <div v-on:blur="getIndex()" id="origin">
                     <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
                 </div>
                 <p> AND </p>
-                <div id="the-basics">
+                <div id="destination">
                     <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
                 </div>
-                <div @click="show = !show,getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
+                <div @click="getIndex(), getDistance(indexOfOrigin,indexOfDestination),initCounter()" id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
             </div>
             </div>
 
-            <div v-if="!show" class="ui-widget-2">
+            <div v-if="!show" class="ui-widget-2 animated" transition="bounce">
                 <div class="details">
                 <p> THERE ARE</p>
-                <h1 id="total"> {{totalDistance}}</h1>
+                    <h1  id="total"> <span class="counter">{{totalDistance}} </span></h1>
                 <p> MILES BETWEEN</p>
                 
                 <div v-on:blur="getIndex()" id="origin">
                     <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
                 </div>
                 <p> AND </p>
-                <div id="the-basics">
+                <div id="destination">
                     <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
                 </div>
 
                     
                 <div class="btnContainer">
-                <div @click="show = !show" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
+                <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
                 
                 <div  id="btnMap" type="submit" name="Map" @click="calculate">Map</div>
                 </div>
@@ -56,6 +56,8 @@
         </div>
     </div>
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
     <script src="js/typehead.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>

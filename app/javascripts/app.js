@@ -23,7 +23,6 @@ var vm = new Vue({
 
     ready: function() {
         this.getData();
-
     },
     methods: {
 
@@ -43,12 +42,12 @@ var vm = new Vue({
 
             }
         },
-        
+
         typeData: function() {
 
-            var a = vm._data.airportName;
+            var a = this.airportName;
 
-            $('#the-basics .typeahead').typeahead({
+            $('#destination .typeahead').typeahead({
                 hint: false,
                 highlight: false,
                 minLength: 1
@@ -68,47 +67,44 @@ var vm = new Vue({
 
 
         },
-        
-        getIndex:  function(){
-                var  org = this.airportName.indexOf(this.origin);
-                var dest = this.airportName.indexOf(this.destination);
-                this.$set('indexOfOrigin', org);
-                this.$set('indexOfDestination', dest);
+
+        getIndex: function() {
+            var org = this.airportName.indexOf(this.origin);
+            var dest = this.airportName.indexOf(this.destination);
+            this.$set('indexOfOrigin', org);
+            this.$set('indexOfDestination', dest);
         },
 
 
         getDistance: function(origin, destination) {
-            
+
             this.getIndex();
 
-            var lat1,long1,lat2,long2;
-            
-            console.log(this.indexForOrigin);
-            
-        
-            if(origin > -1 && destination > -1){
-                
-            lat1 = this.airports[origin]['la'];
-            long1 = this.airports[origin]['lo'];
-            lat2 = this.airports[destination]['la'];
-            long2 = this.airports[destination]['lo']; 
-                
-            console.log(lat1);
-            console.log(this.airports[ 3 ]['Country']);
-            
-                        
+            var lat1, long1, lat2, long2;
 
-            // round to the nearest 1/1000
-            function round(x) {
-                return Math.round(x * 10) / 10;
-            }
 
-            // convert degrees to radians
-            function deg2rad(deg) {
-                rad = deg * Math.PI / 180; // radians = degrees * pi/180
-                return rad;
-            }
-            
+            if (origin > -1 && destination > -1) {
+                
+                //Hide the ui-widget box
+                document.getElementById("hide").style.display = "none";
+                this.show = !this.show;
+
+                lat1 = this.airports[origin]['la'];
+                long1 = this.airports[origin]['lo'];
+                lat2 = this.airports[destination]['la'];
+                long2 = this.airports[destination]['lo'];
+
+                // round to the nearest 1/1000
+                function round(x) {
+                    return Math.round(x * 10) / 10;
+                }
+
+                // convert degrees to radians
+                function deg2rad(deg) {
+                    rad = deg * Math.PI / 180; // radians = degrees * pi/180
+                    return rad;
+                }
+
                 // convert coordinates to radians
                 lat1 = deg2rad(lat1);
                 long1 = deg2rad(long1);
@@ -124,43 +120,61 @@ var vm = new Vue({
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
                 var d = R * c; //(where R is the radius of the Earth)
                 var dm = round(d);
+                this.initCounter();
 
-                console.log(d);
-                console.log(dm);
-                
                 this.$set('totalDistance', dm);
+                this.initCounter();
 
 
-                $('#total').text(dm + " M");
-
-            }else{
+            } else {
                 console.log('Please Select an Airport');
             }
 
+
+
+        },
+
+        initCounter: function() {
+
+            if ($('.counter').length > 0) {
+                $('.counter').counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+
+            }
+
+        },
+
+        resetCounter: function() {
+            this.show = !this.show;
+            this.origin = '';
+            this.destination = '';
             
+            this.getData();
 
 
         }
 
-    },
-    
-    http: {
-        headers: { // options
-            method: 'get',
-            params: {},
-            data: '',
-            xhr: null,
-            jsonp: 'callback',
-            beforeSend: null,
-            crossOrigin: null,
-            emulateHTTP: false,
-            emulateJSON: false
-        }
     }
 
 })
 
 
+if ($('.counter').length > 0) {
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+}
+
+
+Vue.transition('bounce', { // eslint-disable-line
+    type: 'animation',
+    enterClass: 'rotateIn',
+    leaveClass: 'fadeOutDownBig'
+});
 
 var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
@@ -183,4 +197,3 @@ var substringMatcher = function(strs) {
         cb(matches);
     };
 };
-
