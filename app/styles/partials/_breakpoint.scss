@@ -3,14 +3,26 @@ $desktop: 768px;
 @media (min-width: 0px) and (max-width: 768px) {
     
 
-    html {
 
-    	font-size: 3em;
+}
+
+
+
+/*
+@media (min-width: 769px) {
+    html {
         &:before {
-            content: 'mobile';
+            content: 'desktop';
             display: none;
         }
     }
+*/
+
+@media only screen and (max-width: 820px){
+
+	body {
+		    margin: 0 auto
+	}
 
     #logo {
         width: 30%;
@@ -26,8 +38,6 @@ $desktop: 768px;
 	    	padding-top: 0;
 	    }
     }
-
-
 
     .wrapper{
     	margin-top: 0;
@@ -60,14 +70,4 @@ $desktop: 768px;
 
      }
 
-
-}
-
-@media (min-width: 769px) {
-    html {
-        &:before {
-            content: 'desktop';
-            display: none;
-        }
-    }
 }
