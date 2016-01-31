@@ -1,67 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Airport Calculator</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" type="text/css" />
-    
-
 </head>
 
 <body>
     <div class="container" id="app">
- <img class="logo" id="logo" src="images/logo.png" />  
-    
+        <img class="logo" id="logo" src="images/logo.png" />
         <div class="wrapper">
             <div>
             </div>
             <div id="hide" v-if="show" class="ui-widget animated" transition="fade">
-                <div class="details" >
-                <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
+                <div class="details">
+                    <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
                     <div v-on:blur="getIndex()" id="origin">
-                    <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
+                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
+                    </div>
+                    <p> AND </p>
+                    <div id="destination">
+                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
+                    </div>
+                    <div @click="getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE"> CALCULATE</div>
                 </div>
-                <p> AND </p>
-                <div id="destination">
-                    <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                </div>
-                <div @click="getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE"> CALCULATE</div>
             </div>
-            </div>
-
             <div v-if="!show" class="ui-widget-2 animated" transition="bounce">
                 <div class="details">
-                <p> THERE ARE</p>
-                    <h1  id="total"> <span id="counter" class="counter">{{totalDistance}} </span></h1>
-                <p> MILES BETWEEN</p>
-                
-                <div v-on:blur="getIndex()" id="origin">
-                    <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
-                </div>
-                <p> AND </p>
-                <div id="destination">
-                    <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                </div>
-
-                    
-                <div class="btnContainer">
-                <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
-                
-                <div  id="btnMap" type="submit" name="Map" @click="calculate">Map</div>
-                </div>
+                    <p> THERE ARE</p>
+                    <h1 id="total"> <span id="counter" class="counter"></span></h1>
+                    <p> MILES BETWEEN</p>
+                    <div v-on:blur="getIndex()" id="origin">
+                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
                     </div>
+                    <p> AND </p>
+                    <div id="destination">
+                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
+                    </div>
+                    <div class="btnContainer">
+                        <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
+                        <div id="btnMap" type="submit" name="Map" @click="calculate">Map</div>
+                    </div>
+                </div>
             </div>
-            
-            
-
         </div>
     </div>
-    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/countupjs/1.6.0/countUp.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/typehead.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
 
