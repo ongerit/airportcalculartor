@@ -71,8 +71,8 @@ gulp.task('scripts',function(){
   return gulp.src('app/scripts/*.js')
       .pipe($.uglify())
       .pipe(gulp.dest('dist/scripts'));
-  return gulp.src('app/javascripts/*.js')
-      .pipe(gulp.dest('dist/javascripts'));
+  return gulp.src('app/scripts/*')
+      .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('compass', function() {
@@ -120,8 +120,8 @@ gulp.task('fonts', () => {
 
 
 gulp.task('json',function(){
-  return gulp.src('app/javascripts/*.json')
-      .pipe(gulp.dest('dist/json'));
+  return gulp.src('app/scripts/*.json')
+      .pipe(gulp.dest('dist/scripts'));
 //  return gulp.src('app/javascripts/*.json')
 //      .pipe(gulp.dest('dist/json'))
 //      .pipe(gulp.dest('.tmp/json'));
@@ -155,8 +155,7 @@ gulp.task('serve', ['styles', 'fonts','json'], () => {
 
   gulp.watch([
     'app/*.html',
-    'app/javascripts/**/*.js',
-    'app/javascripts/**/*.json',
+    'app/scripts/**/*',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -209,7 +208,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2'], () => {
+gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2','json'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

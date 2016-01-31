@@ -1,6 +1,7 @@
-var vm = new Vue({
+'use strict';
+var vm = new Vue({ // eslint-disable-line
 
-    el: "#app",
+    el: '#app',
 
     data: {
         origin: '',
@@ -16,7 +17,7 @@ var vm = new Vue({
         totalDistance: '',
         indexOfOrigin: '',
         indexOfDestination: '',
-        show: 'false',
+        show: 'false'
     },
 
     ready: function() {
@@ -26,7 +27,7 @@ var vm = new Vue({
     methods: {
 
         getData: function() {
-            var airData = "../scripts/data.json";
+            var airData = '../scripts/data.json';
             this.$http.get(airData, function(data) {
                 this.$set('airports', data);
                 this.getAirports();
@@ -38,11 +39,34 @@ var vm = new Vue({
             var airportData = this.airports;
             for (var i = 0; i < airportData.length; i++) {
                 this.airportName.push(airportData[i].an + ' ( ' + airportData[i].ac + ' ) ');
-                //                this.$set('airportName', airportData.a[i]);
+                // his.$set('airportName', airportData.a[i]);
             }
         },
 
         typeData: function() {
+
+            var substringMatcher = function(strs) {
+                return function findMatches(q, cb) {
+                    var matches, substringRegex; // eslint-disable-line
+
+                    // an array that will be populated with substring matches
+                    matches = [];
+
+                    // regex used to determine if a string contains the substring `q`
+                    var substrRegex = new RegExp(q, 'i'); // eslint-disable-line
+
+                    // iterate through the pool of strings and for any string that
+                    // contains the substring `q`, add it to the `matches` array
+                    $.each(strs, function(i, str) {
+                        if (substrRegex.test(str)) {
+                            matches.push(str);
+                        }
+                    });
+
+                    cb(matches);
+                };
+            };
+
 
             var a = this.airportName;
 
@@ -74,21 +98,6 @@ var vm = new Vue({
 
 
         initCounter: function() {
-            //            
-            //    function count($this){
-            //        var current = parseInt($this.html(), 10);
-            //        $this.html(++current);
-            //        if(current !== $this.data('count')){
-            //            setTimeout(function(){count($this)}, 1);
-            //        }
-            //    }        
-            //  $(".counter").each(function() {
-            //      $(this).data('count', parseInt($(this).html(), 10));
-            //      $(this).html('0');
-            //      count($(this));
-            //  });
-            // 
-
             var options = {
                 useEasing: true,
                 useGrouping: true,
@@ -97,7 +106,7 @@ var vm = new Vue({
                 prefix: '',
                 suffix: ''
             };
-            var count = new CountUp("counter", 0, this.totalDistance, 0, 2.5, options);
+            var count = new CountUp('counter', 0, this.totalDistance, 0, 2.5, options); // eslint-disable-line
             count.start();
 
         },
@@ -109,28 +118,29 @@ var vm = new Vue({
 
             var lat1, long1, lat2, long2;
 
+            // round to the nearest 1/1000
+            function round(x) {
+                return Math.round(x * 10) / 10;
+            }
+
+            // convert degrees to radians
+            function deg2rad(deg) {
+                var rad = deg * Math.PI / 180; // radians = degrees * pi/180
+                return rad;
+            }
+
 
             if (origin > -1 && destination > -1) {
 
                 //Hide the ui-widget box
-                document.getElementById("hide").style.display = "none";
+                document.getElementById('hide').style.display = 'none';
                 this.show = !this.show;
 
-                lat1 = this.airports[origin]['la'];
-                long1 = this.airports[origin]['lo'];
-                lat2 = this.airports[destination]['la'];
-                long2 = this.airports[destination]['lo'];
+                lat1 = this.airports[origin].la;
+                long1 = this.airports[origin].lo;
+                lat2 = this.airports[destination].la;
+                long2 = this.airports[destination].lo;
 
-                // round to the nearest 1/1000
-                function round(x) {
-                    return Math.round(x * 10) / 10;
-                }
-
-                // convert degrees to radians
-                function deg2rad(deg) {
-                    rad = deg * Math.PI / 180; // radians = degrees * pi/180
-                    return rad;
-                }
 
                 // convert coordinates to radians
                 lat1 = deg2rad(lat1);
@@ -152,7 +162,7 @@ var vm = new Vue({
 
                 this.$nextTick(function() {
                     this.initCounter();
-                })
+                });
 
             } else {
                 console.log('Please Select an Airport');
@@ -167,38 +177,16 @@ var vm = new Vue({
 
             this.$nextTick(function() {
                 this.typeData(); //Doesn't populate array with duplicate airports
-            })
+            });
 
         }
 
     }
 
-})
+});
 
 Vue.transition('bounce', { // eslint-disable-line
     type: 'animation',
     enterClass: 'rotateIn',
     leaveClass: 'fadeOutDownBig'
 });
-
-var substringMatcher = function(strs) {
-    return function findMatches(q, cb) {
-        var matches, substringRegex;
-
-        // an array that will be populated with substring matches
-        matches = [];
-
-        // regex used to determine if a string contains the substring `q`
-        substrRegex = new RegExp(q, 'i');
-
-        // iterate through the pool of strings and for any string that
-        // contains the substring `q`, add it to the `matches` array
-        $.each(strs, function(i, str) {
-            if (substrRegex.test(str)) {
-                matches.push(str);
-            }
-        });
-
-        cb(matches);
-    };
-};
