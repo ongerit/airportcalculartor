@@ -1,0 +1,22 @@
+{
+  "name": "airportcalculator",
+  "homepage": "https://github.com/ongerit/airportcalculator",
+  "authors": [
+    "Thomas Ongeri <ongerit@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~1.0.13"
+  }
+}
