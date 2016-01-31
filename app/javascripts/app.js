@@ -1,5 +1,3 @@
-var airData = "../javascripts/data.json";
-
 var vm = new Vue({
 
     el: "#app",
@@ -18,15 +16,17 @@ var vm = new Vue({
         totalDistance: '',
         indexOfOrigin: '',
         indexOfDestination: '',
-        show: 'false'
+        show: 'false',
     },
 
     ready: function() {
         this.getData();
+
     },
     methods: {
 
         getData: function() {
+            var airData = "../javascripts/data.json";
             this.$http.get(airData, function(data) {
                 this.$set('airports', data);
                 this.getAirports();
@@ -39,7 +39,6 @@ var vm = new Vue({
             for (var i = 0; i < airportData.length; i++) {
                 this.airportName.push(airportData[i].an + ' ( ' + airportData[i].ac + ' ) ');
                 //                this.$set('airportName', airportData.a[i]);
-
             }
         },
 
@@ -64,8 +63,6 @@ var vm = new Vue({
                 name: 'a',
                 source: substringMatcher(a)
             });
-
-
         },
 
         getIndex: function() {
@@ -73,6 +70,36 @@ var vm = new Vue({
             var dest = this.airportName.indexOf(this.destination);
             this.$set('indexOfOrigin', org);
             this.$set('indexOfDestination', dest);
+        },
+
+
+        initCounter: function() {
+            //            
+            //    function count($this){
+            //        var current = parseInt($this.html(), 10);
+            //        $this.html(++current);
+            //        if(current !== $this.data('count')){
+            //            setTimeout(function(){count($this)}, 1);
+            //        }
+            //    }        
+            //  $(".counter").each(function() {
+            //      $(this).data('count', parseInt($(this).html(), 10));
+            //      $(this).html('0');
+            //      count($(this));
+            //  });
+            // 
+
+            var options = {
+                useEasing: true,
+                useGrouping: true,
+                separator: ',',
+                decimal: '.',
+                prefix: '',
+                suffix: ''
+            };
+            var count = new CountUp("counter", 0, this.totalDistance, 0, 2.5, options);
+            count.start();
+
         },
 
 
@@ -84,7 +111,7 @@ var vm = new Vue({
 
 
             if (origin > -1 && destination > -1) {
-                
+
                 //Hide the ui-widget box
                 document.getElementById("hide").style.display = "none";
                 this.show = !this.show;
@@ -120,28 +147,15 @@ var vm = new Vue({
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
                 var d = R * c; //(where R is the radius of the Earth)
                 var dm = round(d);
-                this.initCounter();
 
                 this.$set('totalDistance', dm);
-                this.initCounter();
 
+                this.$nextTick(function() {
+                    this.initCounter();
+                })
 
             } else {
                 console.log('Please Select an Airport');
-            }
-
-
-
-        },
-
-        initCounter: function() {
-
-            if ($('.counter').length > 0) {
-                $('.counter').counterUp({
-                    delay: 10,
-                    time: 1000
-                });
-
             }
 
         },
@@ -150,25 +164,16 @@ var vm = new Vue({
             this.show = !this.show;
             this.origin = '';
             this.destination = '';
-            
-            this.getData();
 
+            this.$nextTick(function() {
+                this.typeData(); //Doesn't populate array with duplicate airports
+            })
 
         }
 
     }
 
 })
-
-
-if ($('.counter').length > 0) {
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
-
-}
-
 
 Vue.transition('bounce', { // eslint-disable-line
     type: 'animation',
