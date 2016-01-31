@@ -41,7 +41,7 @@
                     </div>
                     <div class="btnContainer">
                         <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
-                        <div id="btnMap" type="submit" name="Map" @click="calculate">Map</div>
+                        <a target="_blank" title="Directions Map" href="https://maps.google.com?saddr=@{{lat1}},{{long1}}&daddr=@{{lat2}},{{long2}}"><div id="btnMap" type="submit" name="Map" @click="calculate">Map</div></a>
                     </div>
                 </div>
             </div>

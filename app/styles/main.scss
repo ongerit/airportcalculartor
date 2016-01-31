@@ -1,26 +1,5 @@
 @import 'partials/_fonts.scss'; //imports all partials
 @import 'partials/_typehead.scss';
-//Colors
-$white: #fff;
-$blue: #1c72b0;
-@font-face {
-    font-family: Engschrift;
-    src: url(../../fonts/dinengschriftstd-webfont.eot);
-}
-
-@font-face {
-    font-family: Mittelschrift;
-    src: url(../../fonts/DINMittelschriftStd.otf);
-}
-
-@font-face {
-    font-family: DIN;
-    src: url(../../fonts/dinengschriftstd-webfont.ttf);
-}
-
-@mixin font($font) {
-    font-family: $font, 'Arial', san-serif;
-}
 
 body {
     background: url(../images/bg.jpg) no-repeat center center fixed;

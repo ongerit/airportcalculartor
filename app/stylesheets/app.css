@@ -1,10 +1,10 @@
 @font-face {
   font-family: Engschrift;
-  src: url(fonts/dinengschriftstd-webfont.eot);
+  src: url(../fonts/dinengschriftstd-webfont.eot);
 }
 @font-face {
   font-family: Mittelschrift;
-  src: url(fonts/DINMittelschriftStd.otf);
+  src: url(../fonts/DINMittelschriftStd.otf);
 }
 /* scaffolding */
 /* ----------- */

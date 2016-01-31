@@ -1,9 +1,31 @@
 @font-face {
     font-family: Engschrift;
-    src: url(fonts/dinengschriftstd-webfont.eot);
+    src: url(../fonts/dinengschriftstd-webfont.eot);
 }
 
 @font-face {
     font-family: Mittelschrift ;
-    src: url(fonts/DINMittelschriftStd.otf);
+    src: url(../fonts/DINMittelschriftStd.otf);
+}
+
+//Colors
+$white: #fff;
+$blue: #1c72b0;
+@font-face {
+    font-family: Engschrift;
+    src: url(../fonts/dinengschriftstd-webfont.eot);
+}
+
+@font-face {
+    font-family: Mittelschrift;
+    src: url(../fonts/DINMittelschriftStd.otf);
+}
+
+@font-face {
+    font-family: DIN;
+    src: url(../fonts/dinengschriftstd-webfont.ttf);
+}
+
+@mixin font($font) {
+    font-family: $font, 'Arial', san-serif;
 }
