@@ -27,7 +27,7 @@ var vm = new Vue({ // eslint-disable-line
     methods: {
 
         getData: function() {
-            var airData = 'data.json';
+            var airData = 'scripts/data.json';
             this.$http.get(airData, function(data) {
                 this.$set('airports', data);
                 this.getAirports();
