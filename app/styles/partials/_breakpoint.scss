@@ -1,0 +1,37 @@
+$mobile: 0px;
+$desktop: 768px;
+@media (min-width: 0px) and (max-width: 768px) {
+    html {
+        &:before {
+            content: 'mobile';
+            display: none;
+        }
+    }
+    #logo {
+        width: 30%;
+        margin: 0 auto;
+        float: none;	
+    }
+    .ui-widget{
+    	width: 95%;
+    	display: inline-block;
+
+    }
+    .wrapper{
+    	margin-top: 0;
+	    max-width: 100%;	
+    }
+
+    .container{
+    	width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    html {
+        &:before {
+            content: 'desktop';
+            display: none;
+        }
+    }
+}
