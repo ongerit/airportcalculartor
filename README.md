@@ -2,7 +2,7 @@
 Prototype for application that calculates distance between airports
 
 
-###[DEMO]()
+###[DEMO](http://ongerit.github.io/airportcalculator/)
  
 
 
