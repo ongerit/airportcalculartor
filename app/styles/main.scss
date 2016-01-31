@@ -2,7 +2,7 @@
 @import 'partials/_typehead.scss'; 
 //Colors
 $white: #fff;
-$blue: blue;
+$blue: #1c72b0;
 
 @font-face {
     font-family: Engschrift;
@@ -87,13 +87,16 @@ input {
 
 .container {
     width: 100%;
+    width: 960px;
+    max-width: 100%;
 
 }
 
 .logo{
     margin: 0 auto;
-    width: 50%;
+    width: 20%;
     display: block;
+    float: left;
 }
 
 .logo-animate{
@@ -109,12 +112,14 @@ input {
     max-width: 400px;
     width: 95%;
     margin: 0 auto;
-    margin-top: 10em;
+    margin-top: 5em;
 }
 
 #total {
-    color: $white;
+    color: $blue;
     font-size: 4em;
+    line-height: 0;
+    font-family: 'DIN', Arial;
 }
 
 div,
@@ -130,7 +135,9 @@ input {
     }
 }
 
-#btnSubmit {
+
+
+#btnSubmit,#btnReset,#btnMap {
     text-align: center;
     height: 50px;
     margin: 0 auto;
@@ -141,12 +148,30 @@ input {
     line-height: 1.5em;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 2em;
-    color: #1c72b0;
+    margin-top: 22px;
+    color: $blue;
     line-height: 3em;
     width: 300px;
-
 }
+
+#btnReset,#btnMap{
+    width: 47%;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+}
+#btnReset{
+    margin-right: 1em;
+
+    
+}
+
+.btnContainer{
+    margin: 0 auto; 
+    width: 93%;
+    height: 89px;
+}
+
 
 .airplanes{
     position: absolute;
@@ -156,22 +181,46 @@ input {
 
 .ui-widget{
 
-    width: 380px;
-    padding: 15%;
+    width: 551px;
     background: url('../images/airplanes.png');
     background-position: 50%;
     background-repeat: no-repeat;
-    height: 387px;
-    padding-top: 7em;      
+    height: 536px;
+    
+    .details{
+            width: 54%;
+    margin: 0 auto;
+            padding-top: 5em;
+        
+    }
+
+}
+
+.ui-widget-2{
+
+    width: 551px;
+    background: url('../images/airplanes.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 536px;    
+    .details{
+    width: 54%;
+margin: 0  auto;
+                padding-top: 2.1em;
+        
+    }
+
+      
 
 }
 
 .typeahead{
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     background: transparent;
     border: 2.5px solid #fff;
     color: white;
     font-size: 24px;
-    width: 311px;
+    width: 95%;
 
     
     

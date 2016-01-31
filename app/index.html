@@ -4,28 +4,55 @@
     <title>Airport Calculator</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" type="text/css" />
 </head>
 
 <body>
     <div class="container" id="app">
-        
-        {{distance | json}}
-        <!-- <img class="logo" id="logo" src="images/logo.png" />  -->
+ <img class="logo" id="logo" src="images/logo.png" />  
+    
         <div class="wrapper">
             <div>
             </div>
-            <div class="ui-widget">
+            <div v-if="show" class="ui-widget">
+                <div class="details">
                 <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
-                    <div id="origin">
-                    <input class="typeahead" type="text" placeholder="Origin">
+                    <div v-on:blur="getIndex()" id="origin">
+                    <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
                 </div>
-                <p> And </p>
+                <p> AND </p>
                 <div id="the-basics">
-                    <input class="typeahead" type="text" placeholder="Destination">
+                    <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
                 </div>
-                <div id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
+                <div @click="show = !show,getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE" @click="calculate"> CALCULATE</div>
             </div>
-            <p id="total"></p>
+            </div>
+
+            <div v-if="!show" class="ui-widget-2">
+                <div class="details">
+                <p> THERE ARE</p>
+                <h1 id="total"> {{totalDistance}}</h1>
+                <p> MILES BETWEEN</p>
+                
+                <div v-on:blur="getIndex()" id="origin">
+                    <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
+                </div>
+                <p> AND </p>
+                <div id="the-basics">
+                    <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
+                </div>
+
+                    
+                <div class="btnContainer">
+                <div @click="show = !show" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
+                
+                <div  id="btnMap" type="submit" name="Map" @click="calculate">Map</div>
+                </div>
+                    </div>
+            </div>
+            
+            
+
         </div>
     </div>
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
