@@ -1,31 +1,26 @@
 @import 'partials/_fonts.scss'; //imports all partials
-@import 'partials/_typehead.scss'; 
+@import 'partials/_typehead.scss';
 //Colors
 $white: #fff;
 $blue: #1c72b0;
-
 @font-face {
     font-family: Engschrift;
     src: url(../../fonts/dinengschriftstd-webfont.eot);
 }
 
 @font-face {
-    font-family: Mittelschrift ;
+    font-family: Mittelschrift;
     src: url(../../fonts/DINMittelschriftStd.otf);
 }
 
 @font-face {
-    font-family: DIN ;
+    font-family: DIN;
     src: url(../../fonts/dinengschriftstd-webfont.ttf);
-    
 }
 
-
-@mixin font($font){
-   font-family: $font, 'Arial', san-serif;
+@mixin font($font) {
+    font-family: $font, 'Arial', san-serif;
 }
-
-
 
 body {
     background: url(../images/bg.jpg) no-repeat center center fixed;
@@ -44,8 +39,8 @@ p {
     line-height: 1em;
     text-align: center;
     font-size: 22px;
-    
 }
+
 h1,
 h2,
 h3,
@@ -89,25 +84,25 @@ input {
     width: 100%;
     width: 960px;
     max-width: 100%;
-
 }
 
-.logo{
+.logo {
     margin: 0 auto;
     width: 20%;
     display: block;
     float: left;
 }
 
-.logo-animate{
+.logo-animate {
     margin: 0;
     display: block;
 }
 
-.status{
+.status {
     visibility: hidden;
     display: none;
 }
+
 .wrapper {
     max-width: 400px;
     width: 95%;
@@ -129,21 +124,20 @@ label {
 
 input {
     font-family: 'Engschrift', 'Arial', san-serif;
-
     &:focus {
         outline: 0;
     }
 }
 
-
-
-#btnSubmit,#btnReset,#btnMap {
+#btnSubmit,
+#btnReset,
+#btnMap {
     text-align: center;
     height: 50px;
     margin: 0 auto;
     color: white;
     border-radius: 6px;
-    font-family: 'Helvetica light','Arial' ;
+    font-family: 'Helvetica light', 'Arial';
     line-height: 1.5em;
     font-size: 16px;
     cursor: pointer;
@@ -151,95 +145,78 @@ input {
     color: $blue;
     line-height: 3em;
     width: 300px;
-    
-    &:hover{
+    &:hover {
         background: transparent;
         color: #ffffff;
         border: 1px solid white;
-
     }
-
 }
 
-#btnReset,#btnMap{
+#btnReset,
+#btnMap {
     width: 46%;
     float: left;
     text-align: center;
     text-transform: uppercase;
 }
-#btnReset{
+
+#btnReset {
     margin-right: .8em;
     border: 1px solid white;
     color: white;
-    
-    &:hover{
+    &:hover {
         background: #ffffff;
         color: $blue;
     }
 }
 
-#btnMap, #btnSubmit{
+#btnMap,
+#btnSubmit {
     background-color: #fff;
-
 }
 
-.btnContainer{
-    margin: 0 auto; 
+.btnContainer {
+    margin: 0 auto;
     width: 93%;
     height: 89px;
 }
 
-
-.airplanes{
+.airplanes {
     position: absolute;
-        left: 500px;
-    
+    left: 500px;
 }
 
-.ui-widget{
-
+.ui-widget {
     width: 551px;
     background: url('../images/airplanes.png');
     background-position: 50%;
     background-repeat: no-repeat;
     height: 536px;
-    
-    .details{
-            width: 54%;
-    margin: 0 auto;
-            padding-top: 5em;
-        
+    .details {
+        width: 54%;
+        margin: 0 auto;
+        padding-top: 5em;
     }
-
 }
 
-.ui-widget-2{
-
+.ui-widget-2 {
     width: 551px;
     background: url('../images/airplanes.png');
     background-position: 50%;
     background-repeat: no-repeat;
-    height: 536px;    
-    .details{
-   width: 48%;
-margin: 0  auto;
-                padding-top: 2.1em;
-        
+    height: 536px;
+    .details {
+        width: 48%;
+        margin: 0 auto;
+        padding-top: 2.1em;
     }
-
-      
-
 }
 
-.typeahead{
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+.typeahead {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background: transparent;
     border: 2.5px solid #fff;
     color: white;
     font-size: 24px;
     width: 95%;
-
-    
-    
-    
 }
