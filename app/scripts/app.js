@@ -27,7 +27,7 @@ var vm = new Vue({ // eslint-disable-line
     methods: {
 
         getData: function() {
-            var airData = '../scripts/data.json';
+            var airData = 'data.json';
             this.$http.get(airData, function(data) {
                 this.$set('airports', data);
                 this.getAirports();
@@ -142,10 +142,10 @@ var vm = new Vue({ // eslint-disable-line
                 long2 = this.airports[destination].lo;
 
                 //save cordinates for map
-                this.$set('lat1',lat1)
-                this.$set('long1',long1)
-                this.$set('lat2',lat2)
-                this.$set('long2',long2)
+                this.$set('lat1', lat1);
+                this.$set('long1', long1);
+                this.$set('lat2', lat2);
+                this.$set('long2', long2);
 
 
                 // convert coordinates to radians
