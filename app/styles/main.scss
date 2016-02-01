@@ -9,10 +9,10 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 95%;
+    width: 100%;
     margin: 0;
-    display: block;
-    position: absolute;
+    display: inline-block;
+    position: fixed;
     right: 0;
     left: 0;
     top: 0 ;
