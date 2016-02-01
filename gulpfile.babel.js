@@ -1,5 +1,6 @@
 // generated on 2016-01-07 using generator-gulp-webapp 1.0.4
 import gulp from 'gulp';
+var ghPages = require('gulp-gh-pages');
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
@@ -208,7 +209,13 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2','json'], () => {
+gulp.task('deploy', function() {
+  return gulp.src('dist/**/*')
+    .pipe(ghPages());
+});
+
+
+gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2','json','deploy'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
