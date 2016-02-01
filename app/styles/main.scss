@@ -11,8 +11,12 @@ body {
     background-size: cover;
     width: 95%;
     margin: 0;
-    top: 0;
-    height: 0;
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0 ;
+    bottom: 0;
 }
 
 p {
