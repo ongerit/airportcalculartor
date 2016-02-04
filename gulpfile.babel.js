@@ -68,6 +68,12 @@ gulp.task('html', ['styles'], () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('cname', function () {
+  return gulp.src('app/CNAME')
+    .pipe(gulp.dest('dist'));
+});
+
+
 gulp.task('scripts',function(){
   return gulp.src('app/scripts/*.js')
       .pipe($.uglify())
@@ -215,7 +221,7 @@ gulp.task('deploy', function() {
 });
 
 
-gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2','json','deploy'], () => {
+gulp.task('build', ['lint','html','scripts', 'images', 'fonts', 'extras','styles2','json','deploy','cname'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
