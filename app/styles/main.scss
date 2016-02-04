@@ -123,12 +123,13 @@ input {
 #btnSubmit,
 #btnReset,
 #btnMap {
+    @include font('Mittelschrift');
+    font-size:16px;
     text-align: center;
     height: 50px;
     margin: 0 auto;
     color: white;
     border-radius: 6px;
-    font-family: 'Helvetica light', 'Arial';
     line-height: 1.5em;
     font-size: 16px;
     cursor: pointer;
