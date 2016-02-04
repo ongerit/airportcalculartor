@@ -186,7 +186,7 @@ var vm = new Vue({ // eslint-disable-line
 
         }
 
-    },
+    }
 
 });
 
