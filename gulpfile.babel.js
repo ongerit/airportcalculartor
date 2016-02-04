@@ -29,7 +29,7 @@ gulp.task('styles2', () => {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
@@ -61,11 +61,11 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles'], () => {
   return gulp.src('app/*.html')
-//    .pipe($.useref('.tmp','app'))
-//    .pipe($.if('*.js', $.uglify()))
-//    .pipe($.if('*.css', $.cssnano()))
-//    .pipe($.if('*.html', $.htmlmin()))
-    .pipe(gulp.dest('dist'));
+     .pipe($.useref('.tmp','app'))
+     .pipe($.if('*.js', $.uglify()))
+     .pipe($.if('*.css', $.cssnano()))
+//   .pipe($.if('*.html', $.htmlmin()))
+     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('cname', function () {
@@ -85,9 +85,9 @@ gulp.task('scripts',function(){
 gulp.task('compass', function() {
   gulp.src('app/styles/main.scss')
       .pipe($.compass({
-        css: 'dist/styles',
-        sass: 'app/styles',
-        image: 'app/images',
+        // css: 'dist/styles',
+        // sass: 'app/styles',
+        // image: 'app/images',
       }))
       .pipe($.cssnano())
       .pipe(gulp.dest('dist/styles'));
