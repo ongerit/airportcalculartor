@@ -111,7 +111,6 @@ var vm = new Vue({ // eslint-disable-line
 
         },
 
-
         getDistance: function(origin, destination) {
 
             this.getIndex();
@@ -187,7 +186,7 @@ var vm = new Vue({ // eslint-disable-line
 
         }
 
-    }
+    },
 
 });
 
