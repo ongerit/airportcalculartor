@@ -7,7 +7,7 @@ $desktop: 768px;
 }
 
 /*
-@media (min-width: 769px) {
+@media (min-width: 800px) {
     html {
         &:before {
             content: 'desktop';
@@ -39,6 +39,8 @@ $desktop: 768px;
     .ui-widget, .ui-widget-2{
     	width: 95%;
     	display: inline-block;
+        margin: 0em auto;
+
     	background: none;
 	    	 .details {
 	    	width: 100% !important;
