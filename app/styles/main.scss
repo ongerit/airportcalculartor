@@ -1,8 +1,5 @@
 @import 'partials/_fonts.scss'; //imports all partials
 @import 'partials/_typehead.scss';
-
-
-
 body {
     background: url(../images/bg.jpg) #26393e no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -66,7 +63,7 @@ input {
 .container {
     width: 960px;
     max-width: 100%;
-        position: absolute;
+    position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
@@ -126,7 +123,7 @@ input {
 #btnReset,
 #btnMap {
     @include font('Mittelschrift');
-    font-size:16px;
+    font-size: 16px;
     text-align: center;
     height: 50px;
     margin: 0 auto;
@@ -139,6 +136,9 @@ input {
     color: $blue;
     line-height: 3em;
     width: 300px;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
     &:hover {
         background: transparent;
         color: #ffffff;
@@ -217,8 +217,4 @@ input {
     width: 95%;
 }
 
-
 @import 'partials/breakpoint';
-
-
-
