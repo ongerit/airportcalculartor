@@ -10,35 +10,9 @@
 
 <body>
     <div class="container" id="app">
-        <div class="wrapper">
-            <img class="logo" id="logo" src="images/logo.png" />    
-            <div id="hide" v-if="show" class="ui-widget animated" transition="fade">
-                <div class="details">
-                    <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
-                    <div v-on:blur="getIndex()" id="origin">
-                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
-                    </div>
-                    <p> AND </p>
-                    <div id="destination">
-                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                    </div>
-                    <div @click="getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE"> CALCULATE</div>
-                </div>
-            </div>
-            <div v-if="!show" class="ui-widget-2 animated" transition="bounce">
-                <div class="details">
-                    <p> THERE ARE</p>
-                    <h1 id="total"> <span id="counter" class="counter"></span></h1>
-                    <p> MILES BETWEEN</p>
-                    <div v-on:blur="getIndex()" id="origin">
-                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
-                    </div>
-                    <p> AND </p>
-                    <div id="destination">
-                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                    </div>
-                    <div class="btnContainer">
-                        <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
+    
+
+    </div>
 <!--                         <a target="_blank" title="Directions Map" href="https://maps.google.com?saddr=@{{lat1}},{{long1}}&daddr=@{{lat2}},{{long2}}"> -->
 
 <!-- MAP using here instead of google-->
