@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Airport Calculator</title>
+    <title>Camp Fatima 2016 Theme</title>
 <meta name="viewport" content="width=device-width; initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5; " />
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" type="text/css" />
@@ -10,42 +10,23 @@
 
 <body>
     <div class="container" id="app">
-        <div class="wrapper">
-            <img class="logo" id="logo" src="images/logo.png" />    
-            <div id="hide" v-if="show" class="ui-widget animated" transition="fade">
-                <div class="details">
-                    <p> CALCULATE THE DISTANCE BETWEEN TWO AIRPORTS </p>
-                    <div v-on:blur="getIndex()" id="origin">
-                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
-                    </div>
-                    <p> AND </p>
-                    <div id="destination">
-                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                    </div>
-                    <div @click="getIndex(), getDistance(indexOfOrigin,indexOfDestination)" id="btnSubmit" type="submit" name="CALCULATE"> CALCULATE</div>
-                </div>
-            </div>
-            <div v-if="!show" class="ui-widget-2 animated" transition="bounce">
-                <div class="details">
-                    <p> THERE ARE</p>
-                    <h1 id="total"> <span id="counter" class="counter"></span></h1>
-                    <p> MILES BETWEEN</p>
-                    <div v-on:blur="getIndex()" id="origin">
-                        <input v-model="origin" class="typeahead" type="text" placeholder="Origin">
-                    </div>
-                    <p> AND </p>
-                    <div id="destination">
-                        <input v-on:blur="getIndex()" v-model="destination" class="typeahead" type="text" placeholder="Destination">
-                    </div>
-                    <div class="btnContainer">
-                        <div @click="resetCounter()" id="btnReset" type="submit" name="Reset" @click="calculate">Reset</div>
-<!--                         <a target="_blank" title="Directions Map" href="https://maps.google.com?saddr=@{{lat1}},{{long1}}&daddr=@{{lat2}},{{long2}}"> -->
 
-<!-- MAP using here instead of google-->
-                        <a target="_blank" title="Directions Map" href=" https://www.here.com/directions/drive/start:{{lat1}},{{long1}}/end:{{lat2}},{{long2}}">
+    <div class="main">
+    <h1 class="animate" transition="fade"> {{ show == false ? 'The Producers' : 'Did you turn up your volume?'}}</h1>
+    <img src="images/kerry.jpg" class="animate" transition="fade" alt="">
+    <img src="images/thomas.jpg" animate" transition="fade" alt="">
 
-                        <div id="btnMap" type="submit" name="Map" @click="calculate">Map</div></a>
-                    </div>
+    <div @click="show = !show"  v-if="show === false" id="btnSubmit" type="submit" name="CALCULATE"> Camp Theme 2016</div>
+
+    <a href="https://brorlandi.github.io/StarWarsIntroCreator/#!/KB_ZBwoMplq6DQsYL58"><div  class="animate" transition="fade" v-if="show === true" id="btnSubmit" type="submit" name="CALCULATE"> Let's GOOO!!!!</div>
+    </a>
+
+
+    </div>
+    </div>
+
+                       
+    </div>
                 </div>
             </div>
         </div>

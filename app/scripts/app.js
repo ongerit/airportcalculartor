@@ -4,20 +4,9 @@ var vm = new Vue({ // eslint-disable-line
     el: '#app',
 
     data: {
-        origin: '',
-        destination: '',
-        airports: '',
-        airportName: [],
-        airportNameLatLong: [],
-        distance: [],
-        lat1: '',
-        lat2: '',
-        long1: '',
-        long2: '',
-        totalDistance: '',
-        indexOfOrigin: '',
-        indexOfDestination: '',
-        show: 'false'
+        show: false,
+        title: false,
+        ready: false
     },
 
     ready: function() {
@@ -190,7 +179,13 @@ var vm = new Vue({ // eslint-disable-line
 
 });
 
-Vue.transition('bounce', { // eslint-disable-line
+Vue.transition('fade', { // eslint-disable-line
+    type: 'animation',
+    enterClass: 'fadeInUp',
+    leaveClass: 'fadeOutUp'
+});
+
+Vue.transition('fadein', { // eslint-disable-line
     type: 'animation',
     enterClass: 'rotateIn',
     leaveClass: 'fadeOutDownBig'
