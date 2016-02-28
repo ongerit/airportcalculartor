@@ -12,15 +12,11 @@
     <div class="container" id="app">
 
     <div class="main">
-    <h1 class="animate" transition="fade"> {{ show == false ? 'The Producers' : 'Did you turn up your volume?'}}</h1>
-    <img src="images/kerry.jpg" class="animate" transition="fade" alt="">
-    <img src="images/thomas.jpg" animate" transition="fade" alt="">
+        <h1>The Producers</h1>
+    <img src="images/kerry.jpg" alt="">
+    <img src="images/thomas.jpg" alt="">
 
-    <div @click="show = !show"  v-if="show === false" id="btnSubmit" type="submit" name="CALCULATE"> Camp Theme 2016</div>
-
-    <a href="https://brorlandi.github.io/StarWarsIntroCreator/#!/KB_ZBwoMplq6DQsYL58"><div  class="animate" transition="fade" v-if="show === true" id="btnSubmit" type="submit" name="CALCULATE"> Let's GOOO!!!!</div>
-    </a>
-
+    <div id="btnSubmit" type="submit" name="CALCULATE"> Camp Theme 2016</div>
 
     </div>
     </div>
