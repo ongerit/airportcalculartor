@@ -27,7 +27,7 @@ var vm = new Vue({
 
         getData: function() {
             var airData = "../javascripts/data.json";
-            this.$http.get(airData, function(data) {
+            this.$http.get(airData, data => {
                 this.$set('airports', data);
                 this.getAirports();
                 this.typeData();
@@ -35,10 +35,9 @@ var vm = new Vue({
             });
         },
         getAirports: function() {
-            var airportData = this.airports;
+            const airportData = this.airports;
             for (var i = 0; i < airportData.length; i++) {
-                this.airportName.push(airportData[i].an + ' ( ' + airportData[i].ac + ' ) ');
-                //                this.$set('airportName', airportData.a[i]);
+              this.airportName.push(`${airportData[i].an} ( ${airportData[i].ac})`) ;
             }
         },
 
@@ -74,21 +73,6 @@ var vm = new Vue({
 
 
         initCounter: function() {
-            //            
-            //    function count($this){
-            //        var current = parseInt($this.html(), 10);
-            //        $this.html(++current);
-            //        if(current !== $this.data('count')){
-            //            setTimeout(function(){count($this)}, 1);
-            //        }
-            //    }        
-            //  $(".counter").each(function() {
-            //      $(this).data('count', parseInt($(this).html(), 10));
-            //      $(this).html('0');
-            //      count($(this));
-            //  });
-            // 
-
             var options = {
                 useEasing: true,
                 useGrouping: true,
